@@ -1,0 +1,7 @@
+{
+    "require": {
+        "stripe/stripe-php": "^7.100",
+        "mikecao/flight": "^1.3"
+    
+    }
+}
