@@ -153,7 +153,8 @@ p.cardAndExpire {
         
             <div class="card card-cascade wider shadow p-3 mb-5 ">
                 <!--Card image-->
-                <div class="view view-cascade overlay text-center"> <img class="card-img-top" src="../<?=$product['image_path']?>" alt=""> <a>
+                <div class="view view-cascade overlay text-center"> 
+                    <img class="card-img-top" src="../<?=$product['image_path']?>" alt=""> <a>
                         <div class="mask rgba-white-slight"></div>
                     </a> </div>
                 <!--Product Description-->
@@ -217,9 +218,11 @@ p.cardAndExpire {
         <div id="paymentResponse"></div>
         
         <!-- Payment form -->
-        <form action="/" method="POST" id="paymentFrm">
+        <form action="/manak/ecom/checkout" method="POST" id="paymentFrm">
             <div class="form-group">
                 <label>NAME</label>
+
+                <input type="hidden" name="product_id" value="<?=$product['product_id']?>">
 
                 <input type="text" name="name" id="name" class="field" placeholder="Enter name" required="" autofocus="">
             </div>
@@ -281,17 +284,17 @@ var style = {
 var cardElement = elements.create('cardNumber', {
     style: style
 });
-cardElement.mount('#card_number');
+cardElement.mount('4242424242424242');
 
 var exp = elements.create('cardExpiry', {
     'style': style
 });
-exp.mount('#card_expiry');
+exp.mount('26/11');
 
 var cvc = elements.create('cardCvc', {
     'style': style
 });
-cvc.mount('#card_cvc');
+cvc.mount('010');
 
 // Validate input of the card elements
 var resultContainer = document.getElementById('paymentResponse');

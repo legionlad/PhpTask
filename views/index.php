@@ -103,7 +103,7 @@
                 ?>
             <div class="row clearfix"  >
                 <div class="col-sm-4 clearfix wow fadeInLeft product" data-wow-delay=".8s" >
-                    <img src="<?=$product['image_path']?>" alt="iPhone 6" class="img-responsive">
+                    <img src="<?=$product['image_path']?>"  style="height: 230px; width:90%;" alt="iPhone 6" class="img-responsive">
                     <div class="product-info">
                         <div class="col-sm-8" style=" position:relative;">
                             <h4><?= $product['title']; ?></h4>
@@ -188,7 +188,7 @@
                             <div class="row">
                                 <div class="col-md-4 col-sm-6">
                                     <div class="block">
-                                        <img class="app-img img-responsive" src="images/slider/2.png" alt="">
+                                        <img class="app-img img-responsive"  src="images/slider/2.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-md-offset-1 col-sm-6">

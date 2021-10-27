@@ -18,14 +18,14 @@ Flight::route('/', function(){
 Flight::route('GET /product/@id',function($id){
 
     $product = R::getRow( "SELECT * FROM products WHERE product_id = '$id'");
-    print_r($product);
+    // print_r($product);
 
      Flight::render('product.php', array('product' => $product));
   });
 
   Flight::route('POST /checkout',function(){
     $id =   Flight::request()->data['product_id'];
-     $product = R::getRow( "SELECT * FROM products WHERE product_id = '$id'");
+    $product = R::getRow( "SELECT * FROM products WHERE product_id = '$id'");
     $stripeToken = Flight::request()->data['stripeToken'];
     $name = Flight::request()->data['name'];
     $email = Flight::request()->data['email'];
