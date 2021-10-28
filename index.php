@@ -23,14 +23,17 @@ Flight::route('GET /product/@id',function($id){
      Flight::render('product.php', array('product' => $product));
   });
 
-  Flight::route('POST /checkout',function(){
+  Flight::route('POST /payment',function(){
+
     $id =   Flight::request()->data['product_id'];
+    
     $product = R::getRow( "SELECT * FROM products WHERE product_id = '$id'");
+    
     $stripeToken = Flight::request()->data['stripeToken'];
-    $name = Flight::request()->data['name'];
-    $email = Flight::request()->data['email'];
+    $name =       Flight::request()->data['name'];
+    
  
-    Flight::render('payment.php', array('stripeToken' => $stripeToken, 'name' => $name, 'email' => $email,'product' => $product));
+    Flight::render('payment.php', array('stripeToken' => $stripeToken, 'name' => $name,'product' => $product));
 
 
   });

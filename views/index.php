@@ -96,18 +96,29 @@
 
             <h1 class="title">Products</h1>
             <hr class="divider" style="width:50%;">
-          <?php
+
+            <style>
+                .hide-text {
+
+                    white-space: nowrap;
+                    overflow: auto;
+                }
+            </style>
+
+            <div class="row">
+
+            <?php
         //  print_r($products);
+
             foreach($products as $product)
             {
                 ?>
-            <div class="row clearfix"  >
                 <div class="col-sm-4 clearfix wow fadeInLeft product" data-wow-delay=".8s" >
-                    <img src="<?=$product['image_path']?>"  style="height: 230px; width:90%;" alt="iPhone 6" class="img-responsive">
+                    <img src="<?=$product['image_path']?>"  style="height: 230px; width:80%; margin: 0 auto;" alt="iPhone 6" class="img-responsive">
                     <div class="product-info">
-                        <div class="col-sm-8" style=" position:relative;">
+                        <div class="col-sm-8" style=" position:static;">
                             <h4><?= $product['title']; ?></h4>
-                            <p style="overflow: hidden;"><?= $product['description'];?></p>
+                            <p class="hide-text"><?= $product['description'];?></p>
                         </div>
                         <div class="col-sm-4 price"><?=$product['price'];?> $</div>
                         <div class="clear"></div>
@@ -121,9 +132,11 @@
                         </ul>
                     </div>
                 </div>
+
            <?php
             }
             ?>
+            </div>
             
              
            
